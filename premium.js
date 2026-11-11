@@ -569,7 +569,7 @@
     document.addEventListener("pointerdown", (e) => {
       const b = e.target.closest?.("[data-add], #pmAgregar");
       if (!b) return;
-      origen = b.id === "pmAgregar" ? document.querySelector("#pmEmoji img") : b.closest("article")?.querySelector("img.px-ilu");
+      origen = b.id === "pmAgregar" ? document.querySelector("#pmEmoji img") : b.closest("article")?.querySelector("img.px-foto");
     }, { passive: true, capture: true });
     new MutationObserver(() => {
       const n = cuenta();

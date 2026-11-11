@@ -643,6 +643,9 @@
     const grupos = (p) => (Array.isArray(p?.opciones) ? p.opciones : []);
     const conExtras = (p) => EXTRAS_EN.includes(catDe(p));
     const EXTRAS = EXTRAS_IDS.map(porId).filter(Boolean);
+    // Fotos provisionales (Unsplash, uso libre) mientras llegan las fotos reales de cada producto: img/<archivo>.jpg
+    const FOTO = {1: "deditos-queso", 2: "salchipapa", 3: "hamburguesa", 4: "hamburguesa-pollo", 5: "hamburguesa-coleslaw", 6: "hamburguesa-doble", 7: "hamburguesa", 8: "hamburguesa-pollo", 9: "hamburguesa-coleslaw", 10: "hamburguesa-aros", 11: "hamburguesa-doble", 12: "hamburguesa-aros", 13: "hamburguesa", 14: "hamburguesa-coleslaw", 15: "hamburguesa-aros", 16: "hamburguesa-doble", 17: "hamburguesa", 18: "hamburguesa-doble", 19: "hamburguesa-aros", 20: "hamburguesa-coleslaw", 21: "perro", 22: "perros", 23: "perro", 24: "pepito", 25: "maiz", 26: "club-house", 27: "salchipapa", 28: "salchipapa", 29: "salchipapa", 30: "salchipapa", 31: "salchipapa", 32: "picada", 33: "picada", 34: "ensalada", 35: "pechuga", 36: "parrilla", 37: "parrilla", 38: "alitas", 39: "alitas", 40: "alitas", 41: "papas", 42: "papas", 43: "huevo", 44: "tocineta", 45: "deditos-queso", 46: "perros", 47: "picada", 48: "hamburguesa", 49: "pechuga", 50: "ensalada", 51: "picada", 52: "pechuga", 53: "frape", 54: "gaseosa", 55: "gaseosa", 57: "gaseosa", 58: "limonada", 59: "gaseosa", 60: "soda", 61: "soda", 62: "agua", 63: "agua", 64: "limonada", 65: "cerveza", 66: "cerveza", 67: "michelada", 68: "michelada"};
+    const fotoOEmoji = (p) => FOTO[p.id] ? `<img src="img/${FOTO[p.id]}.jpg" alt="" class="px-foto" loading="lazy" decoding="async" draggable="false">` : esc(p.emoji || "🍔");
     const precioDesde = (p) => p.precio + grupos(p).reduce((s, g) => s + Math.min(...g.items.map((o) => o.extra || 0)), 0);
 
     /* =====================================================================
@@ -756,7 +759,7 @@
       const personas = Number(p.personas) > 0 ? `<span>${"👤".repeat(Math.min(Number(p.personas), 4))} Para ${Number(p.personas)}</span>` : "";
       const opciones = conOp ? `<span>${esc(resumenOpciones(p))}</span>` : "";
       return `<article data-id="${p.id}" data-category="${esc(p.categoria)}" data-busqueda="${esc(norm(`${p.nombre} ${p.descripcion} ${tituloCat} ${p.badge || ""}`))}" class="flex gap-3 rounded-2xl border border-amber-400/20 bg-neutral-900 p-3 shadow-sm">
-          <button type="button" data-ver="${p.id}" aria-label="Ver ${esc(p.nombre)}" class="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br px-emoji from-amber-400 to-red-600 text-3xl shadow-inner shadow-black/20 transition active:scale-95">${p.emoji || "🍔"}</button>
+          <button type="button" data-ver="${p.id}" aria-label="Ver ${esc(p.nombre)}" class="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br px-emoji from-amber-400 to-red-600 text-3xl shadow-inner shadow-black/20 transition active:scale-95">${fotoOEmoji(p)}</button>
           <div class="flex min-w-0 flex-1 flex-col">
             ${p.badge ? `<p class="mb-1 self-start rounded-full bg-amber-400 px-2 py-0.5 text-[10px] font-extrabold uppercase tracking-wide text-black">${esc(p.badge)}</p>` : ""}
             <h4 class="text-sm font-extrabold leading-snug text-white"><button type="button" data-ver="${p.id}" class="text-left">${esc(p.nombre)}</button></h4>
@@ -776,7 +779,7 @@
     function destacada(p) {
       return `<article class="borde-oro flex w-[78%] max-w-[17rem] shrink-0 snap-start flex-col rounded-3xl p-4 shadow-xl shadow-black/60">
           <p class="self-start rounded-full bg-gradient-to-r from-amber-300 to-amber-500 px-2.5 py-1 text-[10px] font-black uppercase tracking-wide text-black">${esc(p.badge)}</p>
-          <button type="button" data-ver="${p.id}" aria-label="Ver ${esc(p.nombre)}" class="mx-auto mt-4 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-amber-300 via-orange-500 px-emoji to-red-700 text-5xl shadow-[0_0_45px_rgba(251,146,60,.45)] transition active:scale-95">${p.emoji || "🍔"}</button>
+          <button type="button" data-ver="${p.id}" aria-label="Ver ${esc(p.nombre)}" class="mx-auto mt-4 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-amber-300 via-orange-500 px-emoji to-red-700 text-5xl shadow-[0_0_45px_rgba(251,146,60,.45)] transition active:scale-95">${fotoOEmoji(p)}</button>
           <h3 class="mt-4 font-display text-[1.9rem] leading-none tracking-wide text-white">${esc(p.nombre)}</h3>
           ${p.premio ? `<p class="mt-1 text-[11px] font-semibold leading-snug text-amber-300/90">${esc(p.premio)}</p>` : ""}
           <p class="mt-2 line-clamp-2 text-xs leading-snug text-neutral-400">${esc(p.descripcion)}</p>
@@ -894,7 +897,7 @@
     function abrirProducto(id) {
       const p = porId(id); if (!p) return;
       Object.assign(pm, { p, op: grupos(p).map((g) => g.items[0].nombre), ex: new Set(), cant: 1 });
-      $("#pmEmoji").textContent = p.emoji || "🍔";
+      $("#pmEmoji").innerHTML = fotoOEmoji(p);
       $("#pmBadge").hidden = !p.badge; $("#pmBadge").textContent = p.premio ? "🏆 " + p.premio : (p.badge || "");
       $("#pmNombre").textContent = p.nombre;
       $("#pmPrecioBase").textContent = (grupos(p).length ? "Desde " : "") + cop(precioDesde(p));
@@ -983,7 +986,7 @@
       $("#items").innerHTML = carrito.map((l, i) => {
         const p = porId(l.id), ex = extrasTexto(l);
         return `<li class="flex gap-3 py-3">
-            <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br px-emoji from-amber-400 to-red-600 text-xl" aria-hidden="true">${p.emoji || "🍔"}</span>
+            <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br px-emoji from-amber-400 to-red-600 text-xl" aria-hidden="true">${fotoOEmoji(p)}</span>
             <div class="min-w-0 flex-1">
               <p class="text-sm font-bold leading-snug text-white">${esc(nombreLinea(l))}</p>
               ${ex ? `<p class="text-[11px] font-semibold text-amber-300">➕ ${esc(ex)}</p>` : ""}
