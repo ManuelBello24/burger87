@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es-CO">
+<html lang="es-CO" data-px-pagina="domicilios">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -35,12 +35,12 @@
   <meta property="og:title" content="Burger 87 · Domicilios en Chinácota 🍔🔥">
   <meta property="og:description" content="Las hamburguesas más brutales de Chinácota. ¡A la parrilla sabe mejor! Arma tu pedido y te lo llevamos.">
 
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍔</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="ilustraciones/menu-hamburguesa.svg">
 
   <!-- Tipografías de la marca (las mismas de la carta impresa) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Kaushan+Script&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=Bebas+Neue&amp;family=Kaushan+Script&amp;display=swap">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -160,6 +160,9 @@
     "sameAs": ["https://www.instagram.com/burguer.87", "https://www.tiktok.com/@burguer.87oficial"]
   }
   </script>
+  <link rel="stylesheet" href="premium.css?v=20261111a">
+  <link rel="stylesheet" href="domicilios.css?v=20261111a">
+  <script src="premium.js?v=20261111a" defer></script>
 </head>
 
 <body class="bg-black font-sans text-neutral-200 antialiased">
@@ -537,6 +540,7 @@
       { id: "salchipapas", icono: "🍟", corto: "Salchipapas", titulo: "Salchipapas y picadas" },
       { id: "parrillitas", icono: "🥩", corto: "Parrillitas", titulo: "Parrillitas" },
       { id: "alitas", icono: "🍗", corto: "Alitas", titulo: "Alitas", nota: "BBQ · BBQ picante · Miel mostaza" },
+      { id: "bebidas", icono: "🥤", corto: "Bebidas", titulo: "Bebidas y frapés", nota: "Cerveza solo para mayores de 18 años. El exceso de alcohol es perjudicial para la salud." },
       { id: "adicionales", icono: "➕", corto: "Adicionales", titulo: "Adicionales" }
     ];
 
@@ -596,7 +600,22 @@
       {"id": 49, "nombre": "Filet de pechuga", "precio": 7000, "descripcion": "Agrégalo a tu hamburguesa o perro al personalizarlo, o pídelo aparte.", "categoria": "adicionales", "emoji": "🍗"},
       {"id": 50, "nombre": "Porción de ensalada", "precio": 8000, "descripcion": "Porción adicional para acompañar tu pedido.", "categoria": "adicionales", "emoji": "🥗"},
       {"id": 51, "nombre": "200 g de carne de asar", "precio": 12000, "descripcion": "Porción adicional para acompañar tu pedido.", "categoria": "adicionales", "emoji": "🥩"},
-      {"id": 52, "nombre": "200 g de pechuga", "precio": 12000, "descripcion": "Porción adicional para acompañar tu pedido.", "categoria": "adicionales", "emoji": "🍗"}
+      {"id": 52, "nombre": "200 g de pechuga", "precio": 12000, "descripcion": "Porción adicional para acompañar tu pedido.", "categoria": "adicionales", "emoji": "🍗"},
+      {"id": 53, "nombre": "Frapé", "precio": 12000, "descripcion": "Bebida granizada. Elige el sabor: mandarina, limón, naranja, limonada o cerezada.", "categoria": "bebidas", "opciones": [{"nombre": "Sabor", "items": [{"nombre": "Mandarina", "extra": 0},{"nombre": "Limón", "extra": 0},{"nombre": "Naranja", "extra": 0},{"nombre": "Limonada", "extra": 0},{"nombre": "Cerezada", "extra": 0}]}], "emoji": "🥤"},
+      {"id": 54, "nombre": "Coca-Cola 1.5 L", "precio": 10000, "descripcion": "Botella de 1.5 litros para compartir.", "categoria": "bebidas", "emoji": "🥤"},
+      {"id": 55, "nombre": "Coca-Cola personal", "precio": 5000, "descripcion": "Coca-Cola personal.", "categoria": "bebidas", "emoji": "🥤"},
+      {"id": 57, "nombre": "Postobón personal", "precio": 4500, "descripcion": "Gaseosa Postobón personal.", "categoria": "bebidas", "emoji": "🥤"},
+      {"id": 58, "nombre": "Soda con limón", "precio": 7000, "descripcion": "Soda preparada con limón.", "categoria": "bebidas", "emoji": "🥤"},
+      {"id": 59, "nombre": "Ginger", "precio": 5000, "descripcion": "Ginger ale.", "categoria": "bebidas", "emoji": "🥤"},
+      {"id": 60, "nombre": "Bretaña", "precio": 5000, "descripcion": "Agua con gas Bretaña.", "categoria": "bebidas", "emoji": "🥤"},
+      {"id": 61, "nombre": "Soda Brisa", "precio": 4500, "descripcion": "Agua con gas Brisa.", "categoria": "bebidas", "emoji": "🥤"},
+      {"id": 62, "nombre": "Agua", "precio": 4000, "descripcion": "Agua sin gas.", "categoria": "bebidas", "emoji": "🥤"},
+      {"id": 63, "nombre": "Agua Manantial", "precio": 5000, "descripcion": "Agua Manantial.", "categoria": "bebidas", "emoji": "🥤"},
+      {"id": 64, "nombre": "Jarra de limonada", "precio": 13000, "descripcion": "Jarra de limonada natural para compartir.", "categoria": "bebidas", "emoji": "🥤"},
+      {"id": 65, "nombre": "Club Colombia", "precio": 7000, "descripcion": "Cerveza Club Colombia.", "categoria": "bebidas", "emoji": "🍺"},
+      {"id": 66, "nombre": "Coronita", "precio": 7000, "descripcion": "Cerveza Coronita.", "categoria": "bebidas", "emoji": "🍺"},
+      {"id": 67, "nombre": "Club Colombia michelada", "precio": 10000, "descripcion": "Cerveza Club Colombia preparada como michelada.", "categoria": "bebidas", "emoji": "🍺"},
+      {"id": 68, "nombre": "Coronita michelada", "precio": 10000, "descripcion": "Cerveza Coronita preparada como michelada.", "categoria": "bebidas", "emoji": "🍺"}
     ];
 
     /* =====================================================================
@@ -624,6 +643,22 @@
     const grupos = (p) => (Array.isArray(p?.opciones) ? p.opciones : []);
     const conExtras = (p) => EXTRAS_EN.includes(catDe(p));
     const EXTRAS = EXTRAS_IDS.map(porId).filter(Boolean);
+    const ILU = (p) => {
+      const n = norm(p.nombre), c = catDe(p), r = (x) => "ilustraciones/menu-" + x + ".svg";
+      if (c === "bebidas") return r(/club colombia|coronita|michelada|cerveza/.test(n) ? "cerveza" : "bebida");
+      if (c === "adicionales") return r(/papa/.test(n) ? "papas" : /ensalada/.test(n) ? "ensalada" : /carne de asar|chorizo|tocineta|croqueta/.test(n) ? "parrilla" : "adicional");
+      if (/alita/.test(n) || c === "alitas") return r("alitas");
+      if (/pepito|club/.test(n)) return r("club");
+      if (/hot dog|perro/.test(n) || c === "hotdogs") return r("perro");
+      if (/ensalada/.test(n)) return r("ensalada");
+      if (/maicito/.test(n)) return r("maiz");
+      if (/dedito|queso/.test(n)) return r("queso");
+      if (c === "parrillitas") return r("parrilla");
+      if (/papa|salchi|picada|chimbita/.test(n) || c === "salchipapas") return r("papas");
+      if (/pechuga|pollo|chicken/.test(n)) return r("pollo");
+      return r("hamburguesa");
+    };
+    const imgIlu = (p, cls = "") => `<img src="${ILU(p)}" alt="" class="px-ilu ${cls}" loading="lazy" decoding="async" draggable="false">`;
     const precioDesde = (p) => p.precio + grupos(p).reduce((s, g) => s + Math.min(...g.items.map((o) => o.extra || 0)), 0);
 
     /* =====================================================================
@@ -737,7 +772,7 @@
       const personas = Number(p.personas) > 0 ? `<span>${"👤".repeat(Math.min(Number(p.personas), 4))} Para ${Number(p.personas)}</span>` : "";
       const opciones = conOp ? `<span>${esc(resumenOpciones(p))}</span>` : "";
       return `<article data-id="${p.id}" data-category="${esc(p.categoria)}" data-busqueda="${esc(norm(`${p.nombre} ${p.descripcion} ${tituloCat} ${p.badge || ""}`))}" class="flex gap-3 rounded-2xl border border-amber-400/20 bg-neutral-900 p-3 shadow-sm">
-          <button type="button" data-ver="${p.id}" aria-label="Ver ${esc(p.nombre)}" class="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-amber-400 to-red-600 text-3xl shadow-inner shadow-black/20 transition active:scale-95">${p.emoji || "🍔"}</button>
+          <button type="button" data-ver="${p.id}" aria-label="Ver ${esc(p.nombre)}" class="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-amber-400 to-red-600 text-3xl shadow-inner shadow-black/20 transition active:scale-95">${imgIlu(p)}</button>
           <div class="flex min-w-0 flex-1 flex-col">
             ${p.badge ? `<p class="mb-1 self-start rounded-full bg-amber-400 px-2 py-0.5 text-[10px] font-extrabold uppercase tracking-wide text-black">${esc(p.badge)}</p>` : ""}
             <h4 class="text-sm font-extrabold leading-snug text-white"><button type="button" data-ver="${p.id}" class="text-left">${esc(p.nombre)}</button></h4>
@@ -757,7 +792,7 @@
     function destacada(p) {
       return `<article class="borde-oro flex w-[78%] max-w-[17rem] shrink-0 snap-start flex-col rounded-3xl p-4 shadow-xl shadow-black/60">
           <p class="self-start rounded-full bg-gradient-to-r from-amber-300 to-amber-500 px-2.5 py-1 text-[10px] font-black uppercase tracking-wide text-black">${esc(p.badge)}</p>
-          <button type="button" data-ver="${p.id}" aria-label="Ver ${esc(p.nombre)}" class="mx-auto mt-4 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-amber-300 via-orange-500 to-red-700 text-5xl shadow-[0_0_45px_rgba(251,146,60,.45)] transition active:scale-95">${p.emoji || "🍔"}</button>
+          <button type="button" data-ver="${p.id}" aria-label="Ver ${esc(p.nombre)}" class="mx-auto mt-4 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-amber-300 via-orange-500 to-red-700 text-5xl shadow-[0_0_45px_rgba(251,146,60,.45)] transition active:scale-95">${imgIlu(p)}</button>
           <h3 class="mt-4 font-display text-[1.9rem] leading-none tracking-wide text-white">${esc(p.nombre)}</h3>
           ${p.premio ? `<p class="mt-1 text-[11px] font-semibold leading-snug text-amber-300/90">${esc(p.premio)}</p>` : ""}
           <p class="mt-2 line-clamp-2 text-xs leading-snug text-neutral-400">${esc(p.descripcion)}</p>
@@ -875,7 +910,7 @@
     function abrirProducto(id) {
       const p = porId(id); if (!p) return;
       Object.assign(pm, { p, op: grupos(p).map((g) => g.items[0].nombre), ex: new Set(), cant: 1 });
-      $("#pmEmoji").textContent = p.emoji || "🍔";
+      $("#pmEmoji").innerHTML = imgIlu(p, "px-ilu-grande");
       $("#pmBadge").hidden = !p.badge; $("#pmBadge").textContent = p.premio ? "🏆 " + p.premio : (p.badge || "");
       $("#pmNombre").textContent = p.nombre;
       $("#pmPrecioBase").textContent = (grupos(p).length ? "Desde " : "") + cop(precioDesde(p));
@@ -964,7 +999,7 @@
       $("#items").innerHTML = carrito.map((l, i) => {
         const p = porId(l.id), ex = extrasTexto(l);
         return `<li class="flex gap-3 py-3">
-            <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-amber-400 to-red-600 text-xl" aria-hidden="true">${p.emoji || "🍔"}</span>
+            <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-amber-400 to-red-600 text-xl" aria-hidden="true">${imgIlu(p)}</span>
             <div class="min-w-0 flex-1">
               <p class="text-sm font-bold leading-snug text-white">${esc(nombreLinea(l))}</p>
               ${ex ? `<p class="text-[11px] font-semibold text-amber-300">➕ ${esc(ex)}</p>` : ""}

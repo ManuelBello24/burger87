@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Alitas">
+<defs>
+<radialGradient id="pan" cx=".42" cy=".22" r=".95"><stop offset="0" stop-color="#ffcd6e"/><stop offset=".4" stop-color="#e99a2d"/><stop offset=".8" stop-color="#b2641a"/><stop offset="1" stop-color="#7f4310"/></radialGradient>
+<linearGradient id="panb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e09a35"/><stop offset="1" stop-color="#8d4d13"/></linearGradient>
+<linearGradient id="carne" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7a4023"/><stop offset=".55" stop-color="#4f2613"/><stop offset="1" stop-color="#2c140a"/></linearGradient>
+<linearGradient id="queso" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd84d"/><stop offset="1" stop-color="#f3a51b"/></linearGradient>
+<linearGradient id="lechuga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a6e04d"/><stop offset="1" stop-color="#4e9a20"/></linearGradient>
+<linearGradient id="tomate" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff6a4d"/><stop offset="1" stop-color="#c7281c"/></linearGradient>
+<linearGradient id="dorado" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6b64a"/><stop offset=".6" stop-color="#c97a1e"/><stop offset="1" stop-color="#8a4a12"/></linearGradient>
+<linearGradient id="papa" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe08a"/><stop offset="1" stop-color="#eaa93a"/></linearGradient>
+<linearGradient id="salchicha" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9603a"/><stop offset=".6" stop-color="#a83a20"/><stop offset="1" stop-color="#6e2110"/></linearGradient>
+<linearGradient id="vidrio" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".28"/><stop offset=".5" stop-color="#fff" stop-opacity=".06"/><stop offset="1" stop-color="#fff" stop-opacity=".2"/></linearGradient>
+<linearGradient id="bebida" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffb347"/><stop offset="1" stop-color="#d9480f"/></linearGradient>
+<linearGradient id="plato" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3d3a36"/><stop offset="1" stop-color="#191715"/></linearGradient>
+<radialGradient id="brillo" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff" stop-opacity=".7"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<filter id="suave" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5"/></filter>
+</defs>
+<ellipse cx="120" cy="212" rx="86" ry="11" fill="#000" opacity=".4" filter="url(#suave)"/>
+
+    <ellipse cx="120" cy="178" rx="96" ry="28" fill="url(#plato)"/><ellipse cx="120" cy="172" rx="82" ry="20" fill="#2b2825"/>
+    <g transform="rotate(-28 74 118)"><rect x="68" y="144" width="12" height="32" rx="5" fill="#f0dfc0"/><circle cx="68" cy="178" r="7" fill="#f7ebd2"/><circle cx="80" cy="178" r="7" fill="#f7ebd2"/><path d="M44 120c0-24 16-38 30-38s30 14 30 38c0 22-16 36-30 36s-30-14-30-36Z" fill="url(#salchicha)"/><path d="M58 100c6-8 14-10 20-8" stroke="#ffd0a0" stroke-width="4" stroke-linecap="round" fill="none" opacity=".8"/></g><g transform="rotate(26 160 112)"><rect x="154" y="138" width="12" height="32" rx="5" fill="#f0dfc0"/><circle cx="154" cy="172" r="7" fill="#f7ebd2"/><circle cx="166" cy="172" r="7" fill="#f7ebd2"/><path d="M130 114c0-24 16-38 30-38s30 14 30 38c0 22-16 36-30 36s-30-14-30-36Z" fill="url(#salchicha)"/><path d="M144 94c6-8 14-10 20-8" stroke="#ffd0a0" stroke-width="4" stroke-linecap="round" fill="none" opacity=".8"/></g><g transform="rotate(2 116 96)"><rect x="110" y="122" width="12" height="32" rx="5" fill="#f0dfc0"/><circle cx="110" cy="156" r="7" fill="#f7ebd2"/><circle cx="122" cy="156" r="7" fill="#f7ebd2"/><path d="M86 98c0-24 16-38 30-38s30 14 30 38c0 22-16 36-30 36s-30-14-30-36Z" fill="url(#salchicha)"/><path d="M100 78c6-8 14-10 20-8" stroke="#ffd0a0" stroke-width="4" stroke-linecap="round" fill="none" opacity=".8"/></g>
+    <g fill="#f5efe0"><circle cx="88" cy="108" r="1.8"/><circle cx="118" cy="82" r="1.8"/><circle cx="150" cy="104" r="1.8"/><circle cx="170" cy="92" r="1.6"/><circle cx="66" cy="118" r="1.6"/></g>
+</svg>

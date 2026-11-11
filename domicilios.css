@@ -1,0 +1,69 @@
+/* =====================================================================
+   BURGER 87 · DOMICILIOS
+   Ajustes de la capa visual del sistema (premium.css) para esta página:
+   conserva la letra de la carta impresa y sus propios componentes.
+   ===================================================================== */
+
+/* Títulos con la letra de la carta impresa */
+#inicio h1 { font-size: clamp(2.6rem, 13.5vw, 3.4rem); font-variation-settings: normal; line-height: .85; }
+.font-display { font-variation-settings: normal !important; letter-spacing: .02em; }
+
+/* Los componentes de Tailwind de esta página, con la paleta del sistema */
+.chip { display: inline-flex; align-items: center; gap: .35rem; }
+.chip[aria-pressed="true"], .chip[aria-checked="true"] {
+  background-color: var(--px-oro) !important;
+  background-image: linear-gradient(180deg, var(--px-oro-claro), var(--px-oro) 55%, var(--px-oro-oscuro)) !important;
+  border-color: transparent !important; color: #1a1006 !important;
+  box-shadow: 0 8px 20px -9px rgba(239, 138, 23, .85) !important;
+}
+.campo { background-color: #0e0b09 !important; border-color: var(--px-linea-2) !important; }
+.campo:focus { border-color: var(--px-oro) !important; box-shadow: 0 0 0 3px rgba(251, 191, 36, .2) !important; }
+.btn-wa { background-image: linear-gradient(180deg, #2fd16a, #16a34a) !important; box-shadow: 0 1px 0 rgba(255, 255, 255, .35) inset, 0 10px 24px -10px rgba(22, 163, 74, .85) !important; }
+#confirmar, #reabrir { background-image: linear-gradient(180deg, #2fd16a, #16a34a) !important; box-shadow: 0 1px 0 rgba(255, 255, 255, .35) inset, 0 14px 30px -12px rgba(22, 163, 74, .9); }
+.borde-oro { background: linear-gradient(160deg, #221a14, #120e0b) padding-box, linear-gradient(135deg, #ffd56b, #ef8a17 35%, #5a2a0c 65%, #ffd56b) border-box !important; }
+
+/* Ilustraciones de los productos */
+:is(button, span):has(> img.px-ilu) {
+  background: radial-gradient(75% 80% at 50% 40%, #4a331c, #1e1712 78%) !important;
+  box-shadow: inset 0 0 0 1px var(--px-linea) !important;
+  overflow: hidden;
+}
+#menu article > :first-child { width: 5.75rem !important; height: 5.75rem !important; border-radius: .95rem; }
+#carrusel button:has(> img.px-ilu) { width: 8rem !important; height: 8rem !important; box-shadow: inset 0 0 0 1px var(--px-linea), 0 0 50px -10px rgba(239, 138, 23, .55) !important; }
+#items span:has(> img.px-ilu) { width: 3rem !important; height: 3rem !important; }
+.px-ilu { width: 88%; height: 88%; object-fit: contain; filter: drop-shadow(0 7px 7px rgba(0, 0, 0, .45)); transition: scale .35s var(--px-resorte), rotate .35s var(--px-resorte); pointer-events: none; }
+@media (hover: hover) { #menu article:hover .px-ilu, #carrusel article:hover .px-ilu { scale: 1.1; rotate: -3deg; } }
+
+/* Hoja de personalizar: la ilustración en grande */
+#prodModal .h-36 { height: 13rem !important; background: radial-gradient(60% 75% at 50% 52%, #5a3c1f, #1b1612 74%) !important; }
+#prodModal .h-36 > .bg-gradient-to-t { background-image: linear-gradient(to top, #1b1612, transparent) !important; }
+#pmEmoji { display: flex; width: 11rem; height: 11rem; align-items: center; justify-content: center; }
+.px-ilu-grande { width: 100%; height: 100%; filter: drop-shadow(0 22px 22px rgba(0, 0, 0, .55)); animation: px-sello .6s var(--px-resorte) both; }
+
+/* Barra del carrito */
+#barraCarrito { background-image: linear-gradient(to top, #0b0908 40%, rgba(11, 9, 8, .85) 70%, transparent) !important; }
+#fab { border-radius: 1.1rem; box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset, 0 16px 34px -10px rgba(239, 138, 23, .8), 0 8px 18px -8px #000 !important; }
+#fab.rebote { animation: px-rebote .5s var(--px-resorte); }
+
+/* Hojas: entran y salen deslizándose */
+#prodModal, #modal { transition: opacity .26s ease, display .34s allow-discrete; opacity: 1; }
+#prodModal.hidden, #modal.hidden { opacity: 0; }
+@starting-style { #prodModal:not(.hidden), #modal:not(.hidden) { opacity: 0; } }
+.velo { animation: none !important; background: rgba(5, 4, 3, .7) !important; backdrop-filter: blur(5px); }
+
+/* Avisos y vistas */
+#toast > div { background: rgba(33, 27, 21, .97) !important; box-shadow: 0 18px 44px -14px #000; }
+#vistaListo:not([hidden]) > p:first-child { display: inline-flex; width: 5.25rem; height: 5.25rem; align-items: center; justify-content: center; border-radius: 50%; color: #fff; font-size: 2.6rem;
+  background: linear-gradient(180deg, #38cf7f, #1f9e5a); box-shadow: 0 0 0 10px rgba(47, 191, 113, .14), 0 22px 40px -14px rgba(31, 158, 90, .9); animation: px-sello .6s var(--px-resorte) both; }
+#empty > p:first-child { color: var(--px-oro); }
+
+/* La cinta de premios y los pasos */
+.cinta .pe { color: var(--px-oro); margin-right: .25rem; }
+section[aria-label="Cómo pedir"] li { background: linear-gradient(180deg, var(--px-sup-2), var(--px-sup-1)) !important; border-color: var(--px-linea) !important; }
+section[aria-label="Cómo pedir"] li > span:first-child { color: var(--px-oro); }
+
+/* Computador: las hojas siguen del ancho de un celular */
+@media (min-width: 900px) {
+  #barraCarrito { max-width: 28rem !important; }
+  #carrusel article { max-width: 19rem; }
+}
