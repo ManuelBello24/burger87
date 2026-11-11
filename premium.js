@@ -138,7 +138,7 @@
     RE_EMOJI.lastIndex = 0;
     if (!RE_EMOJI.test(txt)) return;
     const padre = nodo.parentNode;
-    if (!padre || SALTAR.has(padre.nodeName)) return;
+    if (!padre || SALTAR.has(padre.nodeName) || padre.closest?.(".px-emoji")) return;
     RE_EMOJI.lastIndex = 0;
     // Una opción de una lista no admite íconos: se limpia su texto y se conserva su valor
     if (padre.nodeName === "OPTION") {
